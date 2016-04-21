@@ -27,9 +27,10 @@ const Detail = React.createClass({
                 <ToGalleryBtn />
                 <div className="image-wrapper"><img className="detail-image" src={this.state.info.photo.webPath}/></div>
                 <div className="detail">
-                    <p className="full-name">{this.state.info.participant.name} {this.state.info.participant.patronymic ? this.state.info.participant.patronymic : ''} {this.state.info.participant.surname}</p>
+                    <p className="full-name">{this.state.info.participant.surname} {this.state.info.participant.patronymic ? this.state.info.participant.patronymic : ''} {this.state.info.participant.name}</p>
                     <p className="year">{this.state.info.participant.year} г.р.</p>
                     <p className="story">{this.state.info.participant.description}</p>
+                    <p className="story">{this.state.info.photo.description}</p>
                 </div>
             </div>;
         } else {

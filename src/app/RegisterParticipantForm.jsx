@@ -122,6 +122,7 @@ const RegisterParticipantForm = React.createClass({
         .field('patronymic',patronymic)
         .field('year',year)
         .field('description',description)
+        .field('idContribution', sessionStorage.getItem('idCompetitiveWork'))
         .field('photoInfo', photoInfo)
         .end(function(err, res) {
           if (res && res.body && res.body.success) {
@@ -138,8 +139,6 @@ const RegisterParticipantForm = React.createClass({
           } else {
             self.setState({open:true, message:'Ой! Ошибка.'});
           }
-          console.log(res);
-          console.log(err);
         });
     } else {
       console.log("Unknown error");
@@ -159,8 +158,6 @@ const RegisterParticipantForm = React.createClass({
         } else {
           self.setState({open:true, error:'Ой! Ошибка.'});
         }
-        console.log(res);
-        console.log(err);
       });
   },
 
@@ -224,19 +221,13 @@ const RegisterParticipantForm = React.createClass({
       <div className="section group">
         <div className="info-block-2 col tough span_1_of_3 paragraph_margined">
           <p>
-          Участником конкурса может стать ребенок или группа ребят в заявке одного заявителя.
-          От каждого ребенка к конкурсу может быть допущена только одна работа.
+            Жизнь в мирное время прекрасна, несмотря ни на какие трудности. Особенно хорошо это знают те, кому довелось пройти через войну. Каждый год они ждали и ждут 9 мая как самого важного для них праздника.
           </p>
           <p>
-          Заполните поля формы и загрузите рисунок.
-          Нажмите кнопку "Добавить участника".
-          Так Вы добавите одну работу к общей заявке.
+            У каждого из нас есть родные и близкие, которые внесли свою лепту в победу над агрессором, развязавшим самую страшную войну в истории. В преддверии празднования Дня Победы МТРК «Мир» запускает проект «Мир без войны».
           </p>
           <p>
-          После того, как Вы добавите рисунки всех детей, обязательно нажмите кнопку "Зарегистрировать".
-         </p>
-          <p>
-          Только после этого Ваша заявка будет принята на модерацию.
+            Давайте вместе соберем галерею фотопортретов фронтовиков и ветеранов тыла после их возвращения к обычной жизни. Присылайте снимки своих отцов и матерей, бабушек и дедушек, которые пережили войну и подарили мирную жизнь своим детям и внукам. Пусть их портреты станут напоминанием о том, как дорога каждому Победа, доставшаяся столь дорогой ценой.
           </p>
           <div style={{margin:50}}>
             <a href={'https://www.youtube.com/watch?v=SYVUmVBgRBw&feature=youtu.be'} target={'_blank'} >
@@ -244,7 +235,7 @@ const RegisterParticipantForm = React.createClass({
             < /a>
           < /div>
         < /div>
-        <div className="col span_2_of_3" style={styleBlock}>
+        <div className="col span_1_of_3" style={styleBlock}>
           <div>
             <TextField
                 floatingLabelText="Фамилия*"
@@ -341,7 +332,7 @@ const RegisterParticipantForm = React.createClass({
             </Dialog>
           < /div>
         < /div>
-        <div className="col tough span_3_of_3">
+        <div className="col tough span_1_of_3">
           <ParticipantsList / >
         < /div>
       < /div>

@@ -47,7 +47,6 @@ const ParticipantsList = React.createClass({
       surname:args.surname,
     });
     this.setState({participants:tilesData.length});
-    console.log(args);
   },
   render : function() {
     return (

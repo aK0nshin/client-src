@@ -99,8 +99,6 @@ const RegisterDeclarantForm = React.createClass({
         .field('phone',phone)
         .set('Accept','application/json')
         .end(function(err, res) {
-          console.log(res);
-          console.log(err);
           if (res && res.body && res.body.success
             && res.body.success.id ) {
             sessionStorage.setItem('idDeclarant', res.body.success.id);

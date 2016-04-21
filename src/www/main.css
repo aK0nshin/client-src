@@ -65,7 +65,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 -----------------------------------------------------------------------------*/
 .content {
 	padding: 0 0 100px;
-    margin-top: 25px;
+    margin-top: 60px;
 }
 
 
@@ -83,6 +83,7 @@ html {
 }
 
 body {
+  min-height:100%;
   font-size: 13px;
   line-height: 20px;
   position:relative;
@@ -91,7 +92,7 @@ body {
 #logo {
     width: 81px;
     margin-left: 40px;
-	margin-top: 40px;
+	padding-top: 40px;
 }
 
 /* Responsive layout */

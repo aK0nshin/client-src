@@ -45,8 +45,6 @@ const ImageZone = React.createClass({
       } else {
         self.setState({open:true, error:'Ой! Ошибка.'});
       }
-      console.log(err);
-      console.log(res);
     });
     this.setState({
       files: files,

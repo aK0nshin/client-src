@@ -35,36 +35,6 @@ let PhotoAPIUtils = {
     },
     getDetailInfo: function(photo_id) {
         let info = {};
-        /*
-        info.photo = {
-            "id": "1",
-            "time": "2016-04-14 18:33:49",
-            "idParticipant": "1",
-            "name": "Утро в сосновом бору",
-            "description": "Ну краски там холст, типа круто",
-            "storePath": null,
-            "webPath": 'http://foto1945.mir24.tv/files/p1d37.jpg',
-            "fileName": null,
-            "moderation": null,
-            "rejection": null,
-            "category": null,
-            "priority": null,
-            "type": null,
-            "fileSize": null,
-        };
-        info.participant= {
-            "id": "1",
-            "time": "2016-04-15 12:38:26",
-            "idDeclarant": "1",
-            "name": "Дмитрий",
-            "surname": "Пальмов",
-            "patronymic": "Олегович",
-            "description": 'Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно (например, юмористические варианты).',
-            "year": '1990',
-            "moderation": null,
-            "rejection": null,
-            "team": null,
-        };*/
 
         Superagent.get('/api/v1/contribution/get/'+photo_id)
             .end(function(err, res) {
@@ -74,13 +44,11 @@ let PhotoAPIUtils = {
                         .end(function(error, result) {
                             if (result && result.body) {
                                 info.participant = result.body;
-                                console.log(info);
                                 PhotoAPIUtils.eventEmitter.emit('recieveInfo', info);
                             } //TODO обработать err
                         });
                 } //TODO обработать err
             });
-        console.log(info);
         return false;
     },
 };

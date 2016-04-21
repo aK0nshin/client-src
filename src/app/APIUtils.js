@@ -13,8 +13,6 @@ const bindCompetitiveWork = function(idParticipant, idDeclarant, idCompetitiveWo
       } else {
         Ee.methods.emit('unknownError');
       }
-      console.log(res);
-      console.log(err);
     });
   console.log("binding");
   console.log(idCompetitiveWork);
